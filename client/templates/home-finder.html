@@ -1,0 +1,63 @@
+<template name="homeFinder">
+<form>
+  <div class="panel panel-default">
+      <div class="panel-heading">
+            <div class="panel-tag">Find the home your are looking for</div>
+            <h3 class="panel-title">
+                Describe Your Perfect <b>{{location}}</b> Home
+            </h3>
+      </div>
+      <div class="panel-body">
+          <div class="form-group"> <!--Form row -->
+                <div class="pull-right">
+                    {{homesForSaleString}} - {{location}}                    
+                </div>
+                
+                <div class="form-group-title"> <!--Form row title-->
+                    Pick a Property Type
+                </div>
+                <div class="row">
+                    {{#each houseTypes}}
+                    <div class="col-sm-3">
+                        {{> checkboxButton}}
+                    </div>
+                    {{/each}}
+                </div>
+          </div>
+          <div class="form-group"> <!--Form row -->              
+                <div class="form-group-title"> <!--Form row title-->
+                    Price Range
+                </div>
+                <div>
+                    {{> priceRange rangeData}}
+                </div>
+          </div>
+          <div class="form-group"> <!--Form row -->   
+                <div class="pull-right small">
+                    Want more Advanced Filters? <b>Click Here</b>                    
+                </div>           
+                <div class="form-group-title"> <!--Form row title-->
+                    Must Haves
+                </div>
+                <div class="row">
+                    {{#each mustHaves}}
+                    <div class="col-sm-3">
+                        {{> dropdownSelection}}
+                    </div>
+                    {{/each}}
+                 </div>
+          </div>
+      </div>
+      <div class="panel-footer align-right">
+          <button class="btn btn-default">
+              Clear Selection
+              <span class="fa fa-close"></span>
+          </button>
+          <button class="btn btn-success">
+              Find Your Home
+              <span class="fa fa-angle-right"></span>
+          </button>
+      </div>
+  </div>
+</form>
+</template>
