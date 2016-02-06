@@ -1,1 +1,142 @@
 /* CSS declarations go here */
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+}
+
+/*
+* General bootstrap classes 
+*/
+
+.panel-default {
+    width: 680px;
+    /*height: 550px;*/
+    border: 1px solid #cccccc;
+}
+
+.panel-default .panel-body {
+    border-width: 0;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 10px 14px;
+}
+
+.btn-default {
+    border-color: #cccccc;
+    background-color: #f2f2f2;
+}
+
+/*
+* Panel Heading classes 
+*/
+.panel-default .panel-heading {
+    background-color: #44b244;
+    padding: 2px 0;
+    box-shadow: 0 10px 10px #cccccc;
+}
+
+.panel-default .panel-heading .panel-tag {
+    padding: 8px 8px 8px 17px;
+    background: url('/images/Rectangle_7.png') #000 no-repeat;
+    background-position: 8px 14px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.panel-default .panel-tag .accent {
+    width: 3px; 
+    height: 13px;
+    /*top: 16px;
+    margin-right: 4px;
+    display: inline-block;*/
+    background-color: #44b244;
+}
+
+.panel-default .panel-heading .panel-title {
+    padding: 45px 15px 10px 15px;
+    height: 105px;
+    background-image: url('/images/Header_BG.png');
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+/*
+* Form Group classes 
+*/
+
+.home-finder-detail {
+    font-size: 16px;
+}
+
+.form-group .form-group-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    border-top: 1px solid #cccccc;
+    padding-top: 17px;
+}
+
+.form-group:first-child {
+    border-top-width: 0px;
+    padding-top: 0;
+}
+
+/*
+* Checkbox/Dropdown Button classes 
+*/
+.btn-checkbox, .btn-dropdown {
+    font-size: 14px;
+    text-align: left;
+    padding: 8px;
+}
+
+.btn-dropdown {
+    padding-left: 14px;
+}
+
+.btn-checkbox .checkbox {
+    float: right;
+    margin-top: -2px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #cccccc;
+}
+
+.btn-checkbox .fa {
+    font-size: 17px;
+}
+
+.btn-dropdown .fa-caret-down {
+    color: #cccccc;
+    float: right;
+    margin-top: 5px;
+}
+
+/*
+* Footer classes 
+*/
+.panel-footer {
+    text-align: right;
+    background-color: #ffffff;
+    padding-right: 14px;
+    padding-bottom: 14px;
+}
+
+.btn-cancel {
+    background-color: #acacac;
+    color: white;
+    margin-right: 20px;
+}
+
+.btn-success {
+    background-color: #44b244;
+    width: 200px;
+    text-align: center;
+}

@@ -2,15 +2,15 @@
 <form>
   <div class="panel panel-default">
       <div class="panel-heading">
-            <div class="panel-tag">Find the home your are looking for</div>
+            <div class="panel-tag">Find the home you are looking for</div>
             <h3 class="panel-title">
                 Describe Your Perfect <b>{{location}}</b> Home
             </h3>
       </div>
       <div class="panel-body">
           <div class="form-group"> <!--Form row -->
-                <div class="pull-right">
-                    {{homesForSaleString}} - {{location}}                    
+                <div class="pull-right home-finder-detail">
+                    {{homesForSaleString}} · {{location}}               
                 </div>
                 
                 <div class="form-group-title"> <!--Form row title-->
@@ -48,16 +48,16 @@
                  </div>
           </div>
       </div>
-      <div class="panel-footer align-right">
-          <button class="btn btn-default">
-              Clear Selection
-              <span class="fa fa-close"></span>
-          </button>
-          <button class="btn btn-success">
-              Find Your Home
-              <span class="fa fa-angle-right"></span>
-          </button>
-      </div>
+        <div class="panel-footer">
+            <button class="btn btn-cancel">
+                Clear Selection
+                <span class="fa fa-close"></span>
+            </button>
+            <button class="btn btn-success">
+                Find Your Home
+                <span class="fa fa-angle-right"></span>
+            </button>
+        </div>
   </div>
 </form>
 </template>

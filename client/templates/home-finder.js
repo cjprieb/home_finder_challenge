@@ -5,11 +5,11 @@ var _houseTypes = [
     },
     {
         label: "Condo", 
-        icon:"fa-home"
+        icon:"fa-building"
     },
     {
         label: "Apartment", 
-        icon:"fa-home"
+        icon:"fa-building"
     },
     {
         label: "Townhome", 
