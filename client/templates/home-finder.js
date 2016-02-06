@@ -41,8 +41,21 @@ var _priceRange = {
 }
 
 Template.homeFinder.helpers({
-    location: "Wichita, KS",
-    homesForSaleString: "25 Homes for Sale",
+    location: function() {
+        try {
+            var loc = Locations.findOne();
+            return loc.city + ", " + loc.region_code;
+        }
+        catch (error) {
+            console.log("Error getting location: " + error);
+        }
+        return "";
+    },
+    homesForSaleString: function() {
+        var numHomes = Session.get("NumberOfHomes");
+        var homesStr = numHomes == 1 ? "Home" : "Homes";
+        return numHomes + " " + homesStr + " for Sale";
+    },
     rangeData: function() {
         return _priceRange;
     },

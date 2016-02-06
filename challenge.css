@@ -129,7 +129,9 @@ body {
     padding-bottom: 14px;
 }
 
-.btn-cancel {
+.btn-cancel,
+.btn-checkbox:hover,
+.btn-dropdown:hover {
     background-color: #acacac;
     color: white;
     margin-right: 20px;
