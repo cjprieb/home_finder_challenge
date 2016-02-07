@@ -8,7 +8,7 @@ if ( Meteor.isServer ) {
     
     Meteor.onConnection(function(conn) {
         ipAddress = conn.clientAddress.indexOf("127.0.0.1") == 0 ? "74.125.45.100" : conn.clientAddress; 
-        testIp(conn.id, ipAddress);
+        freeGeoIp(conn.id, ipAddress);
     });
 
     Meteor.publish("locations", function() {
