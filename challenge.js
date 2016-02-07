@@ -7,7 +7,9 @@ if ( Meteor.isServer ) {
     var ipAddress = "";
     
     Meteor.onConnection(function(conn) {
-        ipAddress = conn.clientAddress.indexOf("127.0.0.1") == 0 ? "74.125.45.100" : conn.clientAddress; 
+        //ipAddress = conn.clientAddress.indexOf("127.0.0.1") == 0 ? "74.125.45.100" : conn.clientAddress; 
+        ipAddress = conn.httpHeaders['x-real-ip'];
+        for(var key in conn.httpHeaders) { console.log("value: " + key + " => " + conn.httpHeaders[key]);}
         freeGeoIp(conn.id, ipAddress);
     });
 
