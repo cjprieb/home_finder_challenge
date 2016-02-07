@@ -33,7 +33,7 @@ body {
 */
 .panel-default .panel-heading {
     background-color: #44b244;
-    padding: 2px 0;
+    padding: 2px 0 0 0;
     box-shadow: 0 10px 10px #cccccc;
 }
 
@@ -46,17 +46,8 @@ body {
     font-weight: 700;
 }
 
-.panel-default .panel-tag .accent {
-    width: 3px; 
-    height: 13px;
-    /*top: 16px;
-    margin-right: 4px;
-    display: inline-block;*/
-    background-color: #44b244;
-}
-
 .panel-default .panel-heading .panel-title {
-    padding: 45px 15px 10px 15px;
+    padding: 40px 15px 10px 15px;
     height: 105px;
     background-image: url('/images/Header_BG.png');
     color: #ffffff;
@@ -101,14 +92,6 @@ body {
     padding-left: 14px;
 }
 
-.btn-checkbox .checkbox {
-    float: right;
-    margin-top: -2px;
-    width: 24px;
-    height: 24px;
-    border: 1px solid #cccccc;
-}
-
 .btn-checkbox .fa {
     font-size: 17px;
 }
@@ -117,6 +100,28 @@ body {
     color: #cccccc;
     float: right;
     margin-top: 5px;
+}
+
+/**customizing checkbox to add colored ticks **/
+.btn-checkbox .checkbox {
+    position: absolute;
+    left: -999em;
+}
+
+.btn-checkbox .checkbox-custom {
+    float: right;
+    margin-top: -1px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #cccccc;
+    background: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    color: #44b244;
+}
+
+.btn-checkbox:hover .checkbox-custom {
+    background-color: #cccccc;
 }
 
 /*
@@ -131,7 +136,11 @@ body {
 
 .btn-cancel,
 .btn-checkbox:hover,
-.btn-dropdown:hover {
+.btn-checkbox:focus,
+.btn-checkbox:active:hover,
+.btn-dropdown:hover,
+.btn-dropdown:focus,
+.btn-dropdown:active:hover {
     background-color: #acacac;
     color: white;
     margin-right: 20px;
