@@ -1,6 +1,5 @@
 if ( Meteor.isClient ) {
-    Session.setDefault("UserLocation", "No Where, KS");
-    Session.setDefault("NumberOfHomes", 1);
+    Session.setDefault("PriceRange", [100000,550000]);
     Meteor.subscribe("locations");
 };
 

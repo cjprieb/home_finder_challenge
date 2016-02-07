@@ -1,6 +1,13 @@
 <template name="priceRange">
-    <div class="priceRangeSlider"
-        data-min="{{min}}" data-max="{{max}}"
-        data-selected-min="{{selectedMin}}" data-selected-max="{{selectedMax}}"></div>
-    <p>Left value: {{selectedMin}}, right value: {{selectedMax}}</p>
+    <div class="price-range-slider">
+        <span class="value-label average-value">
+            {{averageStr}}
+            <span class="fa fa-caret-down"></span>
+        </span>
+        <div class="slider" data-min="{{min}}" data-max="{{max}}" data-average="{{average}}"></div>    
+        <div class="value-labels">
+            <span class="value-label min-value">{{selectedMinStr}}</span>
+            <span class="value-label max-value">{{selectedMaxStr}}</span>
+        </div>
+    </div>
 </template>

@@ -151,3 +151,69 @@ body {
     width: 200px;
     text-align: center;
 }
+
+/*
+* Slider classes 
+*/
+.price-range-slider {
+    width: 90%;
+    margin: auto;
+    position: relative;
+    height: 70px;
+    padding-top: 30px;
+}
+
+.value-labels .value-label {
+    position: absolute;
+    bottom: 0px;
+    margin-left: -20px;
+}
+
+.average-value {
+    position: absolute;
+    top: 0px;
+    border: 1px solid #cccccc;
+    padding: 2px 16px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.average-value .fa {
+    color: #cccccc;
+    position: absolute;
+    margin-top: 1.3em;
+}
+
+.min-value, 
+.max-value {
+    z-index: 10;
+    background: #ffffff;
+}
+
+.noUi-connect {
+    background: #44b244;    
+}
+
+.noUi-target {
+    border-color: #f2f2f2;
+}
+
+.noUi-horizontal {
+    height: 5px;
+}
+
+.noUi-horizontal .noUi-handle {
+    border-radius: 50%;
+    border-width: 1px;
+    border-color: #959595;
+    border-style: solid;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.35);
+    width: 28px;
+    height: 28px;
+    top: -12px;
+}
+
+.noUi-handle::before, .noUi-handle::after {
+    display: none;
+}
