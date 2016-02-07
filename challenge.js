@@ -11,8 +11,13 @@ if ( Meteor.isServer ) {
         if ( ipAddress === undefined ) {
             ipAddress = conn.clientAddress;
         }
-        for(var key in conn.httpHeaders) { console.log("value: " + key + " => " + conn.httpHeaders[key]);}
-        freeGeoIp(conn.id, ipAddress);
+        
+        var location = freeGeoIp(conn.id, ipAddress);
+        
+        if ( Locations.find({'ip' : ipAddress}).count() === 0 && location !== null ) {
+            console.log("adding location for " + ipAddress + ": " + location);
+            Locations.insert(location);
+        }
     });
 
     Meteor.publish("locations", function() {
@@ -22,7 +27,7 @@ if ( Meteor.isServer ) {
     });
 }
 
-function testIp(userId, ipAddress) {
+function getLocationforTestIp(userId, ipAddress) {
     var location = {
         "ip":"74.125.45.100",
         "country_code":"US",
@@ -36,10 +41,7 @@ function testIp(userId, ipAddress) {
         "longitude":-95.9923,
         "metro_code":671
     };
-    if ( Locations.find({'ip' : ipAddress}).count() === 0 ) {
-        console.log("adding location for " + ipAddress + ": " + location);
-        Locations.insert(location);
-    }
+    return location;
 }
         
 function freeGeoIp(userId, ipAddress) {
@@ -48,12 +50,10 @@ function freeGeoIp(userId, ipAddress) {
     
     var result = HTTP.get(url);
     if ( result !== null && result !== undefined ) {
-        var location = JSON.parse(result.content);
-        console.log("user location for " + userId + ": " + location.city + ", " + location.region_code);
-        Locations.insert({_id: userId, location: location});
-        //Session.set("UserLocation", result.content);
+        return JSON.parse(result.content);
     }
     else {            
-        console.log("no result found: " + result);
+        console.log("no result found for " + ipAddress);
+        return null;
     }
 } 
