@@ -7,7 +7,7 @@ if ( Meteor.isServer ) {
     var ipAddress = "";
     
     Meteor.onConnection(function(conn) {
-        ipAddress = conn.httpHeaders['x-forwaded-for'];
+        ipAddress = conn.httpHeaders['x-forwarded-for'];
         if ( ipAddress === undefined ) {
             ipAddress = conn.clientAddress;
         }
